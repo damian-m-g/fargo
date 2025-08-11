@@ -108,7 +108,7 @@ func netReq(req *http.Request) ([]byte, int, error) {
 			// again in case it's a short-lived issue
 			log.Warningf("Retrying after temporary network failure, error: %s",
 				nerr.Error())
-			time.Sleep(10)
+			time.Sleep(5 * time.Second)
 		} else {
 			break
 		}
